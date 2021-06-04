@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:gramclone_flutter/config/custom_router.dart';
-import 'package:gramclone_flutter/screens/screens.dart';
+import 'package:flutter_instagram/config/custom_router.dart';
+import 'package:flutter_instagram/screens/screens.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,25 +16,24 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Instagram',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+                primarySwatch: Colors.blue,
         scaffoldBackgroundColor: Colors.grey[50],
-        appBarTheme: AppBarTheme( 
-          brightness: Brightness.light, 
-          color: Colors.white, 
+        appBarTheme: AppBarTheme(
+          brightness: Brightness.light,
+          color: Colors.white,
           iconTheme: const IconThemeData(color: Colors.black),
           textTheme: const TextTheme(
             headline6: TextStyle(
               color: Colors.black,
               fontSize: 20.0,
               fontWeight: FontWeight.w600,
+                          ),
           ),
-          ),
-          ),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       onGenerateRoute: CustomRouter.onGenerateRoute,
       initialRoute: SplashScreen.routeName,
     );
   }
 }
-

@@ -1,2 +1,2 @@
 # gramclone_flutter
- Instagram flutter, Dart로 만들어보기
+ Instagram clone을 flutter, Dart로 만들어보기

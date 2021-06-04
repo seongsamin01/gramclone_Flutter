@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gramclone_flutter/screens/screens.dart';
+import 'package:flutter_instagram/screens/screens.dart';
 
 class CustomRouter {
   static Route onGenerateRoute(RouteSettings settings) {

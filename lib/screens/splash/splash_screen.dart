@@ -7,17 +7,17 @@ class SplashScreen extends StatelessWidget {
     return MaterialPageRoute(
       settings: const RouteSettings(name: routeName),
       builder: (_) => SplashScreen(),
-      );
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope( 
+    return WillPopScope(
       onWillPop: () async => false,
       child: const Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(),
-      ),
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
       ),
     );
   }
