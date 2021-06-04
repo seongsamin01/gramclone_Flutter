@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "409153589901",
+    "project_id": "gramclone-flutter",
+    "storage_bucket": "gramclone-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409153589901:android:b3ee50487dad329e6e08c4",
+        "android_client_info": {
+          "package_name": "com.example.gramcloneFlutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409153589901-7onecqfrrj3im18ogin6k5jij19srbbt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuKzxNIr64sxA2iIosWKZaUC3gGGeR6As"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409153589901-7onecqfrrj3im18ogin6k5jij19srbbt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
