@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_instagram/repositories/repositories.dart';
 import 'package:flutter_instagram/screens/login/cubit/login_cubit.dart';
 import 'package:flutter_instagram/screens/screens.dart';
+import 'package:flutter_instagram/widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String routeName = '/login';
@@ -27,15 +28,14 @@ class LoginScreen extends StatelessWidget {
       onWillPop: () async => false,
       child: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
-               child: BlocConsumer<LoginCubit, LoginState>(
+        child: BlocConsumer<LoginCubit, LoginState>(
           listener: (context, state) {
             if (state.status == LoginStatus.error) {
               showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                        title: Text('Error'),
-                        content: Text(state.failure.message),
-                      ));
+                context: context,
+                builder: (context) =>
+                    ErrorDialog(content: state.failure.message),
+              );
             }
           },
           builder: (context, state) {
@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
               body: Center(
                 child: Padding(
                   padding: const EdgeInsets.all(24.0),
-                                  child: Card(
+                  child: Card(
                     color: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.all(24.0),
@@ -117,6 +117,7 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
+
   void _submitForm(BuildContext context, bool isSubmitting) {
     if (_formKey.currentState.validate() && !isSubmitting) {
       context.read<LoginCubit>().logInWithCredentials();
