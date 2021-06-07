@@ -25,15 +25,15 @@ class MyApp extends StatelessWidget {
         RepositoryProvider<AuthRepository>(
           create: (_) => AuthRepository(),
         ),
+        RepositoryProvider<UserRepository>(
+          create: (_) => UserRepository(),
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
           BlocProvider<AuthBloc>(
             create: (context) =>
                 AuthBloc(authRepository: context.read<AuthRepository>()),
-          ),
-          RepositoryProvider<UserRepository>(
-            create: (_) => UserRepository(),
           ),
         ],
         child: MaterialApp(
