@@ -32,6 +32,9 @@ class MyApp extends StatelessWidget {
             create: (context) =>
                 AuthBloc(authRepository: context.read<AuthRepository>()),
           ),
+          RepositoryProvider<UserRepository>(
+            create: (_) => UserRepository(),
+          ),
         ],
         child: MaterialApp(
           title: 'Flutter Instagram',
