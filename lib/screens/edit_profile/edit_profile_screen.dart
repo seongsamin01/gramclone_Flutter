@@ -1,10 +1,13 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_instagram/models/models.dart';
+import 'package:flutter_instagram/helpers/helpers.dart';
 import 'package:flutter_instagram/repositories/repositories.dart';
 import 'package:flutter_instagram/screens/edit_profile/cubit/edit_profile_cubit.dart';
 import 'package:flutter_instagram/screens/profile/bloc/profile_bloc.dart';
 import 'package:flutter_instagram/widgets/widgets.dart';
+import 'package:image_cropper/image_cropper.dart';
 
 class EditProfileScreenArgs {
   final BuildContext context;
@@ -126,7 +129,17 @@ class EditProfileScreen extends StatelessWidget {
     );
   }
 
-  void _selectProfileImage(BuildContext context) {
+  void _selectProfileImage(BuildContext context) async {
+    final pickedFile = await ImageHelper.pickImageFromGallery(
+      context: context,
+      cropStyle: CropStyle.circle,
+      title: 'Profile Image',
+    );
+    if (pickedFile != null) {
+      context
+          .read<EditProfileCubit>()
+          .profileImageChanged(File(pickedFile.path));
+    }
     // TODO: implement
   }
 
