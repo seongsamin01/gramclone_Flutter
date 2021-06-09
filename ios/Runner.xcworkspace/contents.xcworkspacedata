@@ -5,8 +5,3 @@
       location = "group:Runner.xcodeproj">
    </FileRef>
 </Workspace>
-
-
-ios profile UI에 주황색블럭 에러
-코드비교해보니까 모두 일치
-하지만 유일하게 다른 점 : ios cocoapods 미설치
