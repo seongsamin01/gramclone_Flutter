@@ -4,6 +4,7 @@ import 'package:flutter_instagram/repositories/repositories.dart';
 import 'package:flutter_instagram/screens/signup/cubit/signup_cubit.dart';
 import 'package:flutter_instagram/widgets/error_dialog.dart';
 
+
 class SignupScreen extends StatelessWidget {
   static const String routeName = '/signup';
 
